@@ -61,18 +61,23 @@ export class PostsService {
 
     this.arrCategorias = [ 
       {
+        id: 1,
         nombre: 'Playa'
       },
       {
+        id: 2,
         nombre: 'Montaña'
       },
       {
+        id: 3,
         nombre: 'Ciudad'
       },
       {
+        id: 4,
         nombre: 'Rural'
       },
       {
+        id: 5,
         nombre: 'Festivales'
       },
     ]
@@ -90,6 +95,13 @@ export class PostsService {
 
    getAllPosts(): Post [] {
     return this.arrPosts;
+   }
+
+  // - Este metodo el post por si ID.
+
+   getPostById(pId: number): Post | undefined {
+    const post = this.arrPosts.find(post => post.id === pId);
+    return post;
    }
 
   //  - Este metodo recupera los posts por categoria.

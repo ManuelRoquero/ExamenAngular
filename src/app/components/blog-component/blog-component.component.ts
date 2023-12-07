@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Post } from 'src/app/interfaces/post.interface';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-blog-component',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog-component.component.css']
 })
 export class BlogComponentComponent {
+
+
+  arrPosts: Post [];
+
+  // Inyecto el servicio en el constructor.
+  constructor(private postsService: PostsService) {
+    this.arrPosts = [];
+  }
+
+  // Recupero todos los post del servicio para pintarlas.
+  ngOnInit() {
+
+    const response = this.postsService.getAllPosts();
+    this.arrPosts = response;
+  }
 
 }
