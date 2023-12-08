@@ -116,3 +116,7 @@ export class PostsService {
     return this.arrCategorias;
    }
 }
+
+
+
+// HACER UN SERVICIO PARA CADA INTERFAZ O UNO PARA LOS DOS.
