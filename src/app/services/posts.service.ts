@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/post.interface'
-import { Categoria } from '../interfaces/categoria.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +7,6 @@ import { Categoria } from '../interfaces/categoria.interface'
 export class PostsService {
 
   arrPosts: Post [];
-  arrCategorias: Categoria [];
 
   constructor() {
     this.arrPosts = [
@@ -59,36 +57,6 @@ export class PostsService {
       },
     ];
 
-    this.arrCategorias = [ 
-      {
-        id: 1,
-        nombre: 'Playa'
-      },
-      {
-        id: 2,
-        nombre: 'Montaña'
-      },
-      {
-        id: 3,
-        nombre: 'Ciudad'
-      },
-      {
-        id: 4,
-        nombre: 'Rural'
-      },
-      {
-        id: 5,
-        nombre: 'Festivales'
-      },
-    ]
-   }
-
-  // - Este metodo pare añadir un post recibe parametro post de tipo post.
-  // - Hacemos un push al array con el post que recibimos del formulario.
-  // - Tipamos la funcion que como es una accion lo que me devuelve es vacio.
-
-   addPost(pPost: Post): void {
-    this.arrPosts.push(pPost);
    }
 
   // - Este metodo reucpera todos los post.
@@ -104,19 +72,18 @@ export class PostsService {
     return post;
    }
 
+  // - Este metodo para añadir un post recibe parametro post de tipo post.
+  // - Hacemos un push al array con el post que recibimos del formulario.
+  // - Tipamos la funcion que como es una accion lo que me devuelve es vacio.
+
+  addPost(pPost: Post): void {
+    this.arrPosts.push(pPost);
+   }
+  
   //  - Este metodo recupera los posts por categoria.
 
-  //  getPostsByCategoria(pFiltros: any): Post [] {
-  //   return this.arrPosts.filter(post => post.categoria = pFiltros.categoria)
-  //  }
-
-  // - Este metodo reucpera todas las categorias.
-
-  getAllCategorias(): Categoria [] {
-    return this.arrCategorias;
+   getPostsByCategoria(pFiltros: any): Post [] {
+    return this.arrPosts.filter(post => post.categoria = pFiltros.categoria)
    }
+
 }
-
-
-
-// HACER UN SERVICIO PARA CADA INTERFAZ O UNO PARA LOS DOS.

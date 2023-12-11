@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CategoriasService } from 'src/app/services/categorias.service';
+import { Categoria } from 'src/app/interfaces/categoria.interface';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-formulario-component',
@@ -9,8 +12,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormularioComponentComponent {
 
   formulario!: FormGroup;
+  arrCategorias: Categoria [];
 
-  constructor() { }
+  //Inyecto los servicios en el constructor.
+   constructor(private categoriasService: CategoriasService, private postsService: PostsService) {
+    this.arrCategorias = []; 
+   }
 
   ngOnInit(): void {
 
@@ -23,15 +30,19 @@ export class FormularioComponentComponent {
       categoria: new FormControl('', Validators.required)
     })
 
+    // Recupero todas las categorias del servicio para pintarlas.
+    const response = this.categoriasService.getAllCategorias();
+    this.arrCategorias = response
+
   }
 
   onSubmit() {
 
-    console.log(this.formulario.value)
+    // console.log(this.formulario.value)
     const datosFormulario = this.formulario.value
-
-    // ENVIAR ESTOS DATOS AL SERVICIO.
-    // INCREMENTAR ID++ DEL NUEVO POST.
+    this.postsService.addPost(datosFormulario)
+    
+    // MRP INCREMENTAR ID++ DEL NUEVO POST.
 
   }
 }

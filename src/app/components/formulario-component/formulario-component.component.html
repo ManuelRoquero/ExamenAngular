@@ -10,7 +10,7 @@
 
     <div class="field">
       <label for="texto">Texto: </label>
-      <input id="texto" name="texto" type="text" formControlName="texto">
+      <textarea class="form-control" id="texto" name="texto" type="text" formControlName="texto"></textarea>
       <p class="error"
       *ngIf="formulario.get('texto')?.hasError('required') && formulario.get('texto')?.touched">Campo obligatorio.</p>
     </div>
@@ -38,22 +38,18 @@
       *ngIf="formulario.get('fecha')?.hasError('required') && formulario.get('fecha')?.touched">Campo obligatorio.</p>
     </div>
 
-  <!-- HACER UN SELECT CON NG FOR QUE ME TRAIGA LAS CATEGORIAS DEL SERVICIO-->
-
     <div class="field">
       <label for="categoria">Categoria: </label>
       <select id="categoria" name="categoria" type="text" formControlName="categoria">
         <option value="">Selecciona una opción</option>
-        <option value="playa">Playa</option>
-        <option value="montaña">Montaña</option>
-        <option value="ciudad">Ciudad</option>
-        <option value="rural">Rural</option>
-        <option value="festivales">Festivales</option>
+      <!-- MRP El value sale con la primera en mayuscula porque es el valor del nombre -->
+        <option *ngFor="let categoria of arrCategorias" value="{{categoria.titulo}}">{{categoria.titulo}}</option>
       </select>
       <p class="error"
       *ngIf="formulario.get('categoria')?.hasError('required') && formulario.get('categoria')?.touched">Campo obligatorio.</p>
     </div>
 
+    <!-- MRP No se como hacer que el boton te lleve a la home sin recargar la pagina -->
     <button class="btn btn-primary" type="submit" [disabled]="formulario.invalid">Enviar</button>
 
   </form>
