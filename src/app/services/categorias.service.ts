@@ -13,23 +13,23 @@ export class CategoriasService {
     this.arrCategorias = [ 
       {
         id: 1,
-        titulo: 'playa'
+        titulo: 'Playa'
       },
       {
         id: 2,
-        titulo: 'montaña'
+        titulo: 'Montaña'
       },
       {
         id: 3,
-        titulo: 'ciudad'
+        titulo: 'Ciudad'
       },
       {
         id: 4,
-        titulo: 'rural'
+        titulo: 'Rural'
       },
       {
         id: 5,
-        titulo: 'festivales'
+        titulo: 'Festivales'
       },
     ]
    }

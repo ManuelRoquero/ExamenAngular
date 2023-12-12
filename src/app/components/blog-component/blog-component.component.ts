@@ -24,4 +24,14 @@ export class BlogComponentComponent {
     this.arrPosts = response;
   }
 
+  onFiltroCategoria($event: any) {
+
+  // Llamar a un método del servicio que me recupere los posts culla cateogía sea la que el usuario me está introduciendo.
+  // getPostsByCategoria()
+
+  //  console.log('busqueda en padre:', $event);
+
+    this.arrPosts = this.postsService.getPostsByCategoria($event);
+  }
+
 }

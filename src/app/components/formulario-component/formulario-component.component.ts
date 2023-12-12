@@ -26,6 +26,7 @@ export class FormularioComponentComponent {
       texto: new FormControl('', Validators.required),
       autor: new FormControl('', Validators.required),
       imagen: new FormControl('', [Validators.required, Validators.pattern(/^(ftp|http|https):\/\/[^ "]+$/)]),
+      // MRP Validador para la fecha.
       fecha: new FormControl('', Validators.required),
       categoria: new FormControl('', Validators.required)
     })
@@ -42,7 +43,7 @@ export class FormularioComponentComponent {
     const datosFormulario = this.formulario.value
     this.postsService.addPost(datosFormulario)
     
-    // MRP INCREMENTAR ID++ DEL NUEVO POST.
+    // MRP Incrementar ID++ del nuevo post.
 
   }
 }

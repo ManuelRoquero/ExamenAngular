@@ -38,11 +38,10 @@
       *ngIf="formulario.get('fecha')?.hasError('required') && formulario.get('fecha')?.touched">Campo obligatorio.</p>
     </div>
 
-    <div class="field">
+    <div class="field m-1">
       <label for="categoria">Categoria: </label>
       <select id="categoria" name="categoria" type="text" formControlName="categoria">
-        <option value="">Selecciona una opción</option>
-      <!-- MRP El value sale con la primera en mayuscula porque es el valor del nombre -->
+        <option value="">Selecciona una opción</option>>
         <option *ngFor="let categoria of arrCategorias" value="{{categoria.titulo}}">{{categoria.titulo}}</option>
       </select>
       <p class="error"
@@ -50,7 +49,7 @@
     </div>
 
     <!-- MRP No se como hacer que el boton te lleve a la home sin recargar la pagina -->
-    <button class="btn btn-primary" type="submit" [disabled]="formulario.invalid">Enviar</button>
+    <button class="btn btn-primary m-1" type="submit" [disabled]="formulario.invalid">Enviar</button>
 
   </form>
 </div>

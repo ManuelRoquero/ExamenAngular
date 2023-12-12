@@ -82,8 +82,12 @@ export class PostsService {
   
   //  - Este metodo recupera los posts por categoria.
 
-   getPostsByCategoria(pFiltros: any): Post [] {
-    return this.arrPosts.filter(post => post.categoria = pFiltros.categoria)
+  //  getPostsByCategoria(pFiltros: any): Post [] {
+  //   return this.arrPosts.filter(post => post.categoria = pFiltros.categoria)
+  //  }
+
+   getPostsByCategoria(pFiltro: any): Post [] {
+    return this.arrPosts.filter(post => post.categoria.includes(pFiltro));
    }
 
 }

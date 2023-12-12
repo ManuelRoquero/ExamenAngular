@@ -8,8 +8,8 @@ const routes: Routes = [
   { path: "home", component: BlogComponentComponent },
   { path: "post/:idpost", component: ViewPostComponent },
   { path: "new", component: FormularioComponentComponent },
-  // ¿¿A que componente redirige??
-  { path: "category/:categoryTitle", component: ViewPostComponent },
+  // MRP ¿¿A que componente redirige??
+  // { path: "category/:categoryTitle", component: ViewPostComponent },
   { path: "**", redirectTo: "home"}
 ];
 

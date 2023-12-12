@@ -1,6 +1,11 @@
 <section class="container">
   <div class="row">
-      <div class="col-12 col-md-12 mb-5">
+      <div class="col-12 col-md-3">
+      <!-- Componente filtro -->
+        <app-filtro (filtroCategoria)="onFiltroCategoria($event)"></app-filtro>
+      </div>
+      <!-- Listado post -->
+      <div class="col-12 col-md-9 mb-5">
           <div class="row g-4">
               <article class="col-6 col-md-4" *ngFor="let post of arrPosts">
                 <div class="card">

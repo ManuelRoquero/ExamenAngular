@@ -7,13 +7,15 @@ import { BlogComponentComponent } from './components/blog-component/blog-compone
 import { FormularioComponentComponent } from './components/formulario-component/formulario-component.component';
 import { ViewPostComponent } from './components/view-post/view-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FiltroComponent } from './components/filtro/filtro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogComponentComponent,
     FormularioComponentComponent,
-    ViewPostComponent
+    ViewPostComponent,
+    FiltroComponent
   ],
   imports: [
     BrowserModule,
