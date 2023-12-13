@@ -16,7 +16,7 @@ export class PostsService {
         texto: 'La luz solar puede mejorar nuestro estado de ánimo, disminuir la presión arterial, fortalecer nuestros huesos, músculos e incluso nuestro sistema inmunológico. Y una breve exposición es suficiente para cosechar todos estos beneficios.',
         autor: 'Isabel Solana',
         imagen: 'https://okdiario.com/img/vida-sana/2015/08/Depositphotos_1537765_m.jpg',
-        fecha: '11-10-2023',
+        fecha: '11/10/2023',
         categoria: 'Playa'
       },
       {
@@ -25,7 +25,7 @@ export class PostsService {
         texto: 'El senderismo mejora la salud cardiovascular, reduce el colesterol malo, incrementa la energía y fuerza, tonifica la zona inferior del cuerpo y, además, incrementa la densidad ósea',
         autor: 'Fernando Piedra',
         imagen: 'https://www.ecoenlace.mx/wp-content/uploads/sites/15/2020/10/bastones-senderismo-6-1.jpg',
-        fecha: '10-06-2023',
+        fecha: '10/06/2023',
         categoria: 'Montaña'
       },
       {
@@ -34,7 +34,7 @@ export class PostsService {
         texto: 'Otra de las ventajas que ofrece vivir en la ciudad es que suele estar bien conectada. Por lo general se cuenta con buenas infraestructuras, autopistas y transporte público que permite moverse de forma rápida y sencilla. Otro factor importante, es poder tener acceso a internet donde y cuando quieras. Vida social activa.',
         autor: 'Pedro Calleja',
         imagen: 'https://s36445.pcdn.co/wp-content/uploads/2020/10/ciudades-03.jpg',
-        fecha: '25-07-2023',
+        fecha: '25/07/2023',
         categoria: 'Ciudad'
       },
       {
@@ -43,7 +43,7 @@ export class PostsService {
         texto: 'Una de las principales ventajas de vivir en el campo es poder respirar aire puro, estar en un entorno sin polución en el ambiente. Ritmo de vida tranquilo. Vivir en el campo, aunque no está exento de responsabilidades, permite vivir la vida de forma más pausada y tranquila.',
         autor: 'Javier Rios',
         imagen: 'https://www.yaencontre.com/noticias/wp-content/uploads/2022/10/casas-con-gran-jard%C3%ADn.jpg',
-        fecha: '27-08-2023',
+        fecha: '27/08/2023',
         categoria: 'Rural'
       },
       {
@@ -52,7 +52,7 @@ export class PostsService {
         texto: 'Los festivales de artes constituyen un acontecimiento cultural en muchos pueblos, ciudades y países de todo el mundo. Como celebración de la riqueza y la diversidad de la cultura y la creatividad, a menudo engloban diversas formas de arte contemporáneo y tradicional: danza, música, teatro y artes y oficios.',
         autor: 'Marta Cuenca',
         imagen: 'https://www.mapfre.es/media/viaje-para-festivales-verano.jpg',
-        fecha: '11-11-2023',
+        fecha: '11/11/2023',
         categoria: 'Festivales'
       },
     ];

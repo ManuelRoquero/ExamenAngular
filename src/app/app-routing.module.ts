@@ -5,11 +5,10 @@ import { ViewPostComponent } from './components/view-post/view-post.component';
 import { FormularioComponentComponent } from './components/formulario-component/formulario-component.component';
 
 const routes: Routes = [
+     // MRP Ruta filtro categoria
   { path: "home", component: BlogComponentComponent },
   { path: "post/:idpost", component: ViewPostComponent },
   { path: "new", component: FormularioComponentComponent },
-  // MRP ¿¿A que componente redirige??
-  // { path: "category/:categoryTitle", component: ViewPostComponent },
   { path: "**", redirectTo: "home"}
 ];
 

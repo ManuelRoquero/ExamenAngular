@@ -31,7 +31,7 @@ export class ViewPostComponent {
     ngOnInit(): void {
       this.activatedRoute.params.subscribe((params: any) => {
         const id = parseInt(params.idpost);
-        // Recupero la información de la serie con id --> x (params.idpost).
+        // Recupero la información del post con id --> x (params.idpost).
         // Lo pedimos al servicio.
         this.miPost = this.postsService.getPostById(id);
       })

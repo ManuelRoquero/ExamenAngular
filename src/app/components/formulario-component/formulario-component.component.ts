@@ -13,10 +13,12 @@ export class FormularioComponentComponent {
 
   formulario!: FormGroup;
   arrCategorias: Categoria [];
+  id: number;
 
   //Inyecto los servicios en el constructor.
    constructor(private categoriasService: CategoriasService, private postsService: PostsService) {
     this.arrCategorias = []; 
+    this.id = 6
    }
 
   ngOnInit(): void {
@@ -26,8 +28,7 @@ export class FormularioComponentComponent {
       texto: new FormControl('', Validators.required),
       autor: new FormControl('', Validators.required),
       imagen: new FormControl('', [Validators.required, Validators.pattern(/^(ftp|http|https):\/\/[^ "]+$/)]),
-      // MRP Validador para la fecha.
-      fecha: new FormControl('', Validators.required),
+      fecha: new FormControl('', [Validators.required, Validators.pattern(/^(?:(?:(?:0?[1-9]|1\d|2[0-8])[/](?:0?[1-9]|1[0-2])|(?:29|30)[/](?:0?[13-9]|1[0-2])|31[/](?:0?[13578]|1[02]))[/](?:0{2,3}[1-9]|0{1,2}[1-9]\d|0?[1-9]\d{2}|[1-9]\d{3})|29[/]0?2[/](?:\d{1,2}(?:0[48]|[2468][048]|[13579][26])|(?:0?[48]|[13579][26]|[2468][048])00))$/)]),
       categoria: new FormControl('', Validators.required)
     })
 
@@ -41,9 +42,10 @@ export class FormularioComponentComponent {
 
     // console.log(this.formulario.value)
     const datosFormulario = this.formulario.value
-    this.postsService.addPost(datosFormulario)
-    
-    // MRP Incrementar ID++ del nuevo post.
+    this.postsService.addPost(datosFormulario);
 
+    // Incrementar id del nuevo post.
+    this.formulario.value.id = this.id
+    this.id++;
   }
 }
