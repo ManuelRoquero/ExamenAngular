@@ -1,0 +1,23 @@
+<section class="container mt-3">
+  <div *ngIf="miPost">
+      <h1>{{miPost.titulo}}</h1>
+      <hr>
+      <div class="row">
+          <figure>
+              <img class="img-fluid w-50" [src]="miPost.imagen" [alt]="miPost.titulo">
+          </figure>
+          <div class="col-12 col-md-9">
+              <ul>
+                  <li>Autor: {{miPost.autor}}</li>
+                  <li>Texto: {{miPost.texto}}</li>
+                  <li>Fecha: {{miPost.fecha}}</li>
+                  <li>Categoría: {{miPost.categoria}}</li>
+              </ul>
+              <hr>
+          </div>
+      </div>
+  </div>
+  <div *ngIf="!miPost">
+      <p>El post seleccionado NO EXISTE</p>
+  </div>
+</section>

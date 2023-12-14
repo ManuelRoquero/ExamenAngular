@@ -1,0 +1,7 @@
+<aside class="m-3">
+  <label class="m-1">Filtrar por categoría: </label>
+  <select (change)="recogerDatosCategoria($event)">
+    <option value="">Todas</option>
+    <option *ngFor="let categoria of arrCategorias" value="{{categoria.titulo}}">{{categoria.titulo}}</option>
+  </select>
+</aside>

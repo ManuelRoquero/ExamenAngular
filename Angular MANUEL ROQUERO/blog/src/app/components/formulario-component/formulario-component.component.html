@@ -1,0 +1,56 @@
+<div class="container mb-5">
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+    <div class="field">
+      <label for="titulo">Titulo: </label>
+      <input id="titulo" name="titulo" type="text" formControlName="titulo">
+      <p class="error"
+      *ngIf="formulario.get('titulo')?.hasError('required') && formulario.get('titulo')?.touched">Campo obligatorio.</p>
+    </div>
+
+    <div class="field">
+      <label for="texto">Texto: </label>
+      <textarea class="form-control" id="texto" name="texto" type="text" formControlName="texto"></textarea>
+      <p class="error"
+      *ngIf="formulario.get('texto')?.hasError('required') && formulario.get('texto')?.touched">Campo obligatorio.</p>
+    </div>
+
+    <div class="field">
+      <label for="autor">Autor: </label>
+      <input id="autor" name="autor" type="text" formControlName="autor">
+      <p class="error"
+      *ngIf="formulario.get('autor')?.hasError('required') && formulario.get('autor')?.touched">Campo obligatorio.</p>
+    </div>
+
+    <div class="field">
+      <label for="imagen">Imagen: </label>
+      <input id="imagen" name="imagen" type="text" formControlName="imagen">
+      <p class="error"
+      *ngIf="formulario.get('imagen')?.hasError('required') && formulario.get('imagen')?.touched">Campo obligatorio.</p>
+      <p class="error"
+      *ngIf="formulario.get('imagen')?.hasError('pattern') && formulario.get('imagen')?.touched">Debes intrudir una URL válida.</p>
+    </div>
+
+    <div class="field">
+      <label for="fecha">Fecha: </label>
+      <input id="fecha" name="fecha" type="date" formControlName="fecha" placeholder="00/00/0000">
+      <p class="error"
+      *ngIf="formulario.get('fecha')?.hasError('required') && formulario.get('fecha')?.touched">Campo obligatorio.</p>
+    </div>
+
+    <div class="field m-1">
+      <label for="categoria">Categoría: </label>
+      <select id="categoria" name="categoria" type="text" formControlName="categoria">
+        <option value="">Selecciona una opción</option>>
+        <option *ngFor="let categoria of arrCategorias" value="{{categoria.titulo}}">{{categoria.titulo}}</option>
+      </select>
+      <p class="error"
+      *ngIf="formulario.get('categoria')?.hasError('required') && formulario.get('categoria')?.touched">Campo obligatorio.</p>
+    </div>
+
+    <button class="btn btn-primary m-1" type="submit" [disabled]="formulario.invalid">Enviar</button>
+
+    <router-outlet></router-outlet>
+
+  </form>
+</div>
