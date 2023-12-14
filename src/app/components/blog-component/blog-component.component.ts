@@ -26,10 +26,9 @@ export class BlogComponentComponent {
 
   onFiltroCategoria($event: any) {
 
-  // Llamar a un método del servicio que me recupere los posts cuya cateogía sea la que el usuario me está introduciendo.
-  // getPostsByCategoria()
+    // Llamar a un método del servicio que me recupere los posts cuya cateogía sea la que el usuario me está introduciendo.
 
-  //  console.log('busqueda en padre:', $event);
+    //  console.log('busqueda en padre:', $event);
 
     this.arrPosts = this.postsService.getPostsByCategoria($event);
   }

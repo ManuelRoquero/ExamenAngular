@@ -28,6 +28,7 @@ export class FiltroComponent {
   }
 
   recogerDatosCategoria($event: any) {
+    
     // console.log('busqueda en hijo:', $event.target.value)
     this.filtroCategoria.emit($event.target.value);
   }

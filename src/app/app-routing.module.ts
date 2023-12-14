@@ -5,11 +5,13 @@ import { ViewPostComponent } from './components/view-post/view-post.component';
 import { FormularioComponentComponent } from './components/formulario-component/formulario-component.component';
 
 const routes: Routes = [
-     // MRP Ruta filtro categoria
   { path: "home", component: BlogComponentComponent },
   { path: "post/:idpost", component: ViewPostComponent },
   { path: "new", component: FormularioComponentComponent },
   { path: "**", redirectTo: "home"}
+  
+  // MRP Ruta filtro categoria
+  //  { path: "category/:categoryTitle", component: FiltroComponent }
 ];
 
 @NgModule({

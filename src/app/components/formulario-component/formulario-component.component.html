@@ -33,7 +33,7 @@
 
     <div class="field">
       <label for="fecha">Fecha: </label>
-      <input id="fecha" name="fecha" type="text" formControlName="fecha" placeholder="00/00/0000">
+      <input id="fecha" name="fecha" type="date" formControlName="fecha" placeholder="00/00/0000">
       <p class="error"
       *ngIf="formulario.get('fecha')?.hasError('required') && formulario.get('fecha')?.touched">Campo obligatorio.</p>
     </div>
@@ -48,7 +48,6 @@
       *ngIf="formulario.get('categoria')?.hasError('required') && formulario.get('categoria')?.touched">Campo obligatorio.</p>
     </div>
 
-    <!-- MRP No se como hacer que el boton te lleve a la home sin recargar la pagina -->
     <button class="btn btn-primary m-1" type="submit" [disabled]="formulario.invalid">Enviar</button>
 
     <router-outlet></router-outlet>

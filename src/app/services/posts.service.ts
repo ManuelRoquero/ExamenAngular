@@ -65,7 +65,7 @@ export class PostsService {
     return this.arrPosts;
    }
 
-  // - Este metodo el post por si ID.
+  // - Este metodo recoge el post por su ID.
 
    getPostById(pId: number): Post | undefined {
     const post = this.arrPosts.find(post => post.id === pId);
@@ -74,17 +74,12 @@ export class PostsService {
 
   // - Este metodo para añadir un post recibe parametro post de tipo post.
   // - Hacemos un push al array con el post que recibimos del formulario.
-  // - Tipamos la funcion que como es una accion lo que me devuelve es vacio.
 
-  addPost(pPost: Post): void {
+   addPost(pPost: Post): void {
     this.arrPosts.push(pPost);
    }
   
   //  - Este metodo recupera los posts por categoria.
-
-  //  getPostsByCategoria(pFiltros: any): Post [] {
-  //   return this.arrPosts.filter(post => post.categoria = pFiltros.categoria)
-  //  }
 
    getPostsByCategoria(pFiltro: any): Post [] {
     return this.arrPosts.filter(post => post.categoria.includes(pFiltro));
